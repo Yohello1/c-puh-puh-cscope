@@ -393,7 +393,7 @@ AC_CHECK_TYPE(sighandler_t,[],[],[
 #endif])
 dnl This test was ripped from gnuplot's configure.in:
 AC_MSG_CHECKING(for sigsetjmp)
-AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <setjmp.h>]], [[jmp_buf env; sigsetjmp(env, 1);]])],[AC_MSG_RESULT(yes)
+AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <setjmp.h>]], [[sigjmp_buf env; sigsetjmp(env, 1);]])],[AC_MSG_RESULT(yes)
    AC_DEFINE(HAVE_SIGSETJMP,1,
              [ Define if we have sigsetjmp(). ])],[AC_MSG_RESULT(no)])
 
